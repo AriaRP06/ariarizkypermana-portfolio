@@ -1,0 +1,576 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0a84ff, #ff4500, #fff);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-attachment: fixed;
+  color: #ffffff; /* Mengatur warna teks untuk keseluruhan body */
+}
+
+.Button {
+  display: inline-block; /* Mengubah menjadi inline-block untuk mengatur ukuran */
+  font-size: 18px;
+  font-weight: bold;
+  background: orange;
+  width: 100px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition-duration: 0.3s;
+  transition-property: box-shadow, transform;
+  margin: 10px auto; /* Mengatur margin otomatis untuk pusat */
+}
+
+.Button:focus, .Button:active {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+}
+
+/* Media Query untuk perangkat mobile */
+@media (max-width: 600px) {
+  .Button {
+    font-size: 16px; /* Ukuran font lebih kecil */
+    width: 80%; /* Lebar tombol lebih besar di mobile */
+    padding: 12px; /* Padding lebih besar */
+  }
+}
+
+.skills-container {
+  padding: 20px;
+}
+
+.skills-header {
+  display: flex; /* Menggunakan flexbox untuk tata letak yang lebih baik */
+  align-items: center; /* Menyelaraskan item secara vertikal di tengah */
+  position: relative; /* Menambahkan posisi relatif untuk mendukung absolute positioning pada ::after */
+  margin-bottom: 20px; /* Jarak bawah antara header dan elemen berikutnya */
+}
+
+.skills-header h1 {
+  color: #fff; /* Warna teks judul */
+  font-size: 24px; /* Ukuran font judul */
+  margin: 0; /* Menghilangkan margin default pada h1 */
+  margin-left: 10px; /* Margin kiri untuk memberikan ruang */
+  padding-bottom: 5px; /* Tambahkan padding bawah untuk memberi ruang antara teks dan garis */
+}
+
+.skills-header h1::after {
+  content: '';
+  position: absolute; /* Memposisikan garis secara absolut */
+  left: 15px; /* Geser garis sedikit ke kanan, sesuaikan sesuai kebutuhan */
+  bottom: 0; /* Menempatkan garis tepat di bawah teks */
+  width: 50px; /* Lebar garis */
+  height: 2px; /* Tinggi garis */
+  background-color: #ff4500; /* Warna garis */
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.skill-card {
+  position: relative; 
+  background-color: rgba(255, 255, 255, 0.5); /* Putih dengan transparansi 50% */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Border putih dengan transparansi */
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan untuk efek kedalaman */
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.skill-card img {
+  width: 60%;
+  margin-bottom: 10px;
+}
+
+.skill-card p {
+  color: #ffffff; /* Warna teks */
+  margin: 0; /* Menghilangkan margin default */
+  font-size: 16px; /* Ukuran font */
+  position: relative; /* Memungkinkan posisi absolut untuk ::after */
+  padding-bottom: 5px; /* Memberikan ruang antara teks dan garis */
+}
+
+.skill-card p::after {
+  content: ''; /* Membuat garis */
+  position: absolute; /* Memposisikan garis secara absolut */
+  left: 0; /* Memposisikan garis di kiri teks */
+  bottom: 0; /* Menempatkan garis tepat di bawah teks */
+  width: 100%; /* Lebar garis mengikuti lebar teks */
+  height: 2px; /* Tinggi garis */
+  background-color: #ff4500; /* Warna garis */
+  transition: width 0.3s ease; /* Transisi untuk efek halus */
+}
+
+/* Jika Anda ingin menambahkan efek saat hover pada skill-card */
+.skill-card:hover p::after {
+  width: 100%; /* Garis tetap lebar 100% saat hover */
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 40px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  display: flex; /* Menggunakan flexbox untuk tata letak */
+  flex-direction: row; /* Mengatur arah flex menjadi baris */
+  align-items: center; /* Menyelaraskan elemen di tengah secara vertikal */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.container .image {
+  max-width: 50%; /* Mengatur lebar maksimum gambar */
+  height: auto; /* Mempertahankan rasio aspek */
+  margin-right: 20px; /* Memberikan jarak antara gambar dan teks */
+}
+
+.container .text {
+  flex: 1; /* Membuat teks mengambil ruang yang tersedia */
+}
+
+.container p {
+  margin: 0; /* Mengatur margin untuk menghindari overflow */
+}
+
+@media (max-width: 576px) {
+  .container {
+    flex-direction: column; /* Mengubah arah flex menjadi kolom untuk layar kecil */
+    align-items: center; /* Menyelaraskan elemen di tengah secara horizontal */
+  }
+
+  .container .image {
+    max-width: 100%; /* Membuat gambar mengambil lebar penuh di layar kecil */
+    margin-right: 0; /* Menghapus margin di layar kecil */
+    margin-bottom: 20px; /* Memberikan jarak di bawah gambar */
+  }
+
+  .container .text {
+    padding-left:     0; /* Menghapus padding di layar kecil */
+  }
+
+  .text {
+    font-size: 60px; /* Menyesuaikan ukuran teks untuk layar kecil */
+  }
+
+  .container img {
+    width: 120px; /* Ukuran gambar lebih kecil di layar kecil */
+    height: 120px; /* Ukuran gambar lebih kecil di layar kecil */
+  }
+
+  .content h2 {
+    font-size: 28px; /* Ukuran font untuk judul di layar kecil */
+  }
+
+  .content p {
+    font-size: 16px; /* Ukuran font untuk paragraf di layar kecil */
+  }
+
+  .navbar {
+    padding: 0 1rem; /* Mengurangi padding navbar di layar kecil */
+  }
+
+  .navbar .toggle_btn {
+    margin-bottom: 1rem; /* Tambahkan margin bawah untuk tombol toggle */
+  }
+}
+
+.container img {
+  border-radius: 50%;
+  width: 200px; /* Ukuran gambar diperbesar */
+  height: 200px; /* Ukuran gambar diperbesar */
+  object-fit: cover;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 576px) {
+  .container img {
+    width: 150px; /* Ukuran gambar lebih kecil di layar kecil */
+    height: 150px; /* Ukuran gambar lebih kecil di layar kecil */
+  }
+}
+
+.content {
+  flex: 1;
+  min-width: 250px;
+  text-align: left;
+}
+
+.content h2 {
+  color: #ff4500;
+  margin: 0 0 10px 0;
+  font-size: 32px; /* Ukuran font untuk judul */
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.content h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #0a84ff;
+}
+
+.content p {
+  color: #fff;
+  margin: 5px 0;
+  line-height: 1.5;
+  font-size: 18px; /* Ukuran font untuk paragraf */
+}
+
+.school {
+  text-align: center;
+  padding: 20px;
+}
+
+.school h2 {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 10px;
+  position: relative;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.school h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 60%;
+  height: 2px;
+  background-color: #0a84ff;
+}
+
+.school-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Membuat kartu sekolah membungkus di layar kecil */
+}
+
+.school-card {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px; /* Ukuran tetap, bisa diubah menjadi max-width */
+  max-width: 100%; /* Memastikan kartu tidak lebih lebar dari 100% */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.school-card:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.school-card img {
+  width: 100%; /* Membuat gambar responsif */
+  border-radius: 5px;
+}
+
+.school-card p {
+  color: #0a84ff;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 768px) {
+  .school-container {
+    flex-direction: column; /* Ubah arah flex untuk kontainer sekolah di layar kecil */
+    align-items: center; /* Rata tengah untuk konten */
+  }
+
+  .school-card {
+    width: 90%; /* Kartu sekolah lebih lebar di layar kecil */
+  }
+}
+
+@media (max-width: 576px) {
+  .school h2 {
+    font-size: 20px; /* Ukuran font untuk judul di layar kecil */
+  }
+
+  .school-card {
+    width: 95%; /* Kartu sekolah lebih lebar di layar kecil */
+  }
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #ff4500;
+}
+
+header {
+  position: relative;
+  padding: 0 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center; /* Menjaga semua elemen di tengah secara vertikal */
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 1rem; /* Menambahkan padding horizontal untuk memberikan ruang */
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 8px; /* Margin default untuk logo */
+}
+
+.navbar .links {
+  display: flex;
+  gap: 2rem;
+  align-items: center; /* Menjaga semua elemen dalam links agar sejajar secara vertikal */
+}
+
+.navbar .toggle_btn {
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: auto; /* Mendorong tombol toggle ke kanan */
+  display: none; /* Sembunyikan tombol toggle secara default */
+}
+
+.navbar .links a {
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .links a:hover {
+  color: #ff4500;
+}
+
+.navbar .dropdown_icon {
+  margin-top: 8px; /* Margin default untuk ikon dropdown */
+  font-size: 1.5rem; /* Menyesuaikan ukuran ikon jika diperlukan */
+}
+
+@media (min-width: 768px) {
+  .navbar .logo {
+    margin-top: 0; /* Menghilangkan margin atas untuk desktop */
+  }
+
+  .navbar .dropdown_icon {
+    margin-top: 0; /* Menghilangkan margin atas untuk ikon dropdown di desktop */
+  }
+}
+
+/* Media Query untuk tampilan mobile */
+@media (max-width: 767px) {
+  .navbar .logo {
+    margin-top: 10px; /* Menambahkan margin atas untuk mobile */
+  }
+
+  .navbar .dropdown_icon {
+    margin-top: 10px; /* Menambahkan margin atas untuk ikon dropdown di mobile */
+  }
+}
+
+.action_btn {
+  background-color: orange;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 0.9rem; /* Ukuran font tombol aksi */
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.action_btn:hover {
+  transform: scale(1.05);
+}
+
+.action_btn:active {
+  transform: scale(0.95);
+}
+
+.dropdown_menu {
+  color: #fff;
+  display: none; /* Tersembunyi secara default */
+  position: absolute;
+  right: 20px; /* Menempatkan dropdown sedikit lebih ke kiri */
+  top: 70px; /* Menempatkan dropdown di bawah navbar, menambahkan jarak dari atas */
+  width: calc(100% - 40px); /* Lebar 100% dikurangi margin */
+  max-width: 400px; /* Maksimal lebar 400px */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 1000; /* Pastikan dropdown berada di atas elemen lain */
+}
+
+.dropdown_menu.open {
+  display: block; /* Ditampilkan saat kelas 'open' ditambahkan */
+}
+
+.dropdown_menu ul {
+  padding: 0;
+}
+
+.dropdown_menu li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  font-size: 100px; /* Ukuran huruf */
+}
+
+.left {
+  background: linear-gradient(to bottom, #ff4500, #ff8c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: pulse 1.5s infinite;
+}
+
+.middle {
+  background: linear-gradient(to bottom, #ffffff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(104, 104, 104, 0.5);
+  animation: pulse 1.5s infinite;
+}
+
+.right {
+  background: linear-gradient(to bottom, #0a84ff, #1cf0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.1);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 992px) {
+  .navbar .links,
+  .navbar .action_btn {
+    display: none; /* Sembunyikan tautan dan tombol aksi di layar kecil */
+  }
+
+  .navbar .toggle_btn {
+    display: block; /* Tampilkan tombol toggle */
+  }
+
+  .dropdown_menu {
+    display: none; /* Pastikan dropdown tidak terbuka otomatis */
+  }
+
+  .navbar {
+    flex-direction: column; /* Ubah arah flex untuk navbar di layar kecil */
+    align-items: flex-start; /* Rata kiri untuk item navbar */
+  }
+
+  .navbar .links {
+    flex-direction: column; /* Ubah arah flex untuk tautan di navbar */
+    gap: 1rem; /* Jarak antar tautan */
+  }
+
+  .action_btn {
+    font-size: 0.8rem; /* Menyesuaikan ukuran font tombol aksi di layar kecil */
+  }
+}
+
+@media (max-width: 576px) {
+  .text {
+    font-size: 60px; /* Menyesuaikan ukuran teks untuk layar kecil */
+  }
+
+  .container {
+    flex-direction: column; /* Ubah arah flex untuk kontainer di layar kecil */
+    align-items: center; /* Rata tengah untuk konten */
+  }
+
+  .container img {
+    width: 120px; /* Ukuran gambar lebih kecil di layar kecil */
+    height: 120px; /* Ukuran gambar lebih kecil di layar kecil */
+  }
+
+  .content h2 {
+    font-size: 28px; /* Ukuran font untuk judul di layar kecil */
+  }
+
+  .content p {
+    font-size: 16px; /* Ukuran font untuk paragraf di layar kecil */
+  }
+
+  .navbar {
+    padding: 0 1rem; /* Mengurangi padding navbar di layar kecil */
+  }
+
+  .navbar .toggle_btn {
+    margin-bottom: 1rem; /* Tambahkan margin bawah untuk tombol toggle */
+  }
+}

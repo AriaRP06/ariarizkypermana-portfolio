@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="Beranda.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <span class="left">A</span>
+        <span class="middle">M</span>
+        <span class="right">C</span>
+      </div>
+      <ul class="links">
+        <li><a href="Beranda.html">Beranda</a></li>
+        <li><a href="Tentang saya.html">Tentang saya</a></li>
+        <li><a href="Portfolio.html">Portfolio</a></li>
+        <li><a href="Contact.html">Contact us</a></li>
+      </ul>
+      
+      <li><a href="https://www.canva.com/design/DAGWggkipLo/BSwxYA3hPELl5Amqd6XM9g/edit?utm_content=DAGWggkipLo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" 
+      class="action_btn">CV</a></li>
+      <div class="toggle_btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+    <div class="dropdown_menu">
+      <ul>
+        <li><a href="Beranda.html">Beranda</a></li>
+        <li><a href="Tentang saya.html">Tentang saya</a></li>
+        <li><a href="Portfolio.html">Portfolio</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+  
+    <section class="home">
+      <div class="home-info">
+        <h5>Halo Semua👋 ,saya</h5>
+        <h1 class="glow-text">Aria Rizky Permana</h1>
+        <h3>
+          <span style="--i:4;" data-text="Developer">Developer💻</span>
+          <span style="--i:3;" data-text="FotoGrafer">FotoGrafer📷</span>
+          <span style="--i:2;" data-text="TikToker">TikToker</span>
+          <span style="--i:1;" data-text="YouTuber">YouTuber</span>
+        </h3>
+        <p>Selamat Datang di situs web Pribadi saya🧑🏻😁</p>
+           <div class="btn-sci">
+            <a href="#" class="btn"></a>
+            <div class="sci">
+              <a href="https://github.com/AriaRP06"><i class='bx bxl-github'></i></a>
+              <a href="https://www.tiktok.com/@ariaxid7?_t=8qoMq7ZuqmG&_r=1"><i class='bx bxl-tiktok' ></i></a>
+              <a href="https://youtube.com/@amc-27?si=rW_CgLu9YRKcbFXq"><i class='bx bxl-youtube' ></i></a>
+              <a href="https://www.instagram.com/npc_yangnumpang_lewat/profilecard/?igsh=dGp3OGl4aDE2Znp5"><i class='bx bxl-instagram' ></i></a>
+            </div>
+          </div>
+      </div>
+
+      <div class="home-img">
+        <div class="img-box">
+          <div class="img-item">
+            <img src="Blackhole.png" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+  
+  <script>
+    const toggleBtn = document.querySelector('.toggle_btn');
+    const toggleBtnIcon = document.querySelector('.toggle_btn i');
+    const dropDownMenu = document.querySelector('.dropdown_menu');
+
+    toggleBtn.onclick = function () {
+      dropDownMenu.classList.toggle('open');
+      const isOpen = dropDownMenu.classList.contains('open');
+
+      toggleBtnIcon.className = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars';
+    }
+  </script>
+</body>
+</html>

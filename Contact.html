@@ -1,0 +1,95 @@
+<!-- Contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <script src="https://kit,fontawesome.com/c4254e24a8.js">crossorigin="anoymouse"</script>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="Contact.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <span class="left">A</span>
+        <span class="middle">M</span>
+        <span class="right">C</span>
+      </div>
+      <ul class="links">
+        <li><a href="Beranda.html">Beranda</a></li>
+        <li><a href="Tentang saya.html">Tentang saya</a></li>
+        <li><a href="Portfolio.html">Portfolio</a></li>
+        <li><a href="Contact.html">Contact us</a></li>
+      </ul>
+      <div class="btn-sci">
+        <a href="#" class="btn"></a>
+        <div class="toggle_btn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+        <div class="dropdown_menu">
+          <ul>
+            <li><a href="Beranda.html">Beranda</a></li>
+            <li><a href="Tentang saya.html">Tentang saya</a></li>
+            <li><a href="Portfolio.html">Portfolio</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="sci">
+          <a href="https://github.com/AriaRP06"><i class='bx bxl-github'></i></a>
+          <a href="https://www.tiktok.com/@ariaxid7?_t=8qoMq7ZuqmG&_r=1"><i class='bx bxl-tiktok' ></i></a>
+          <a href="https://youtube.com/@amc-27?si=rW_CgLu9YRKcbFXq"><i class='bx bxl-youtube' ></i></a>
+          <a href="https://www.instagram.com/npc_yangnumpang_lewat/profilecard/?igsh=dGp3OGl4aDE2Znp5"><i class='bx bxl-instagram' ></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="hero">
+    <form action="send_email.php" method="POST">
+      <div class="row">
+        <div class="input-group">
+          <input type="text" name="name" id="name" required>
+          <label for="name"><i class="fas fa-user"></i>Nama kamu</label>
+        </div>
+        <div class="input-group">
+          <input type="tel" name="number" id="number" required>
+          <label for="number"><i class="fas fa-phone-square-alt"></i>Nomor Telepon</label>
+        </div>
+      </div>
+      <div class="input-group">
+        <input type="email" name="email" id="email" required>
+        <label for="email"><i class="fas fa-envelope"></i>Email</label>
+      </div>
+      <div class="input-group">
+        <textarea name="message" id="message" rows="8" required></textarea>
+        <label for="message"><i class="fas fa-comments"></i>Pesan</label>
+      </div>
+      <a href="mailto:ariameren021127@gmail.com">
+        <button type="button">Kirimi <i class="fas fa-paper-plane"></i></button>
+    </a>
+    </form>
+
+  </div>
+
+  <script>
+    const toggleBtn = document.querySelector('.toggle_btn');
+    const toggleBtnIcon = document.querySelector('.toggle_btn i');
+    const dropDownMenu = document.querySelector('.dropdown_menu');
+
+    toggleBtn.onclick = function () {
+      dropDownMenu.classList.toggle('open');
+      const isOpen = dropDownMenu.classList.contains('open');
+
+      toggleBtnIcon.className = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars';
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

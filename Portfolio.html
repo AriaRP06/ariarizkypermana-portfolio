@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="Portfolio.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <span class="left">A</span>
+        <span class="middle">M</span>
+        <span class="right">C</span>
+      </div>
+      <ul class="links">
+        <li><a href="Beranda.html">Beranda</a></li>
+        <li><a href="Tentang saya.html">Tentang saya</a></li>
+        <li><a href="Portfolio.html">Portfolio</a></li>
+        <li><a href="Contact.html">Contact us</a></li>
+      </ul>
+      
+      <li><a href="https://www.canva.com/design/DAGWggkipLo/BSwxYA3hPELl5Amqd6XM9g/edit?utm_content=DAGWggkipLo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" 
+        class="action_btn">CV</a></li>
+        <div class="toggle_btn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+    <div class="dropdown_menu">
+      <ul>
+        <li><a href="Beranda.html">Beranda</a></li>
+        <li><a href="Tentang saya.html">Tentang saya</a></li>
+        <li><a href="Portfolio.html">Portfolio</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+  <div class="container">
+    <div class="header">
+     <h1>
+      Pengalaman Project Sebelumnya
+     </h1>
+     <p>
+      Jelajahi project yang telah saya kerjakan sejauh ini
+     </p>
+    </div>
+    <div class="projects">
+     <div class="project-card">
+      <img alt="Screenshot of Personal Website" height="200" src="ss project 1.png" width="300"/>
+      <h3>
+       Project 1
+      </h3>
+      <p>
+       Ini adalah situs web pertama saya
+      </p>
+      <div class="icons">
+        <i class="fas fa-link" onclick="copyToClipboard('https://ariarizkyproject1.netlify.app/')" style="cursor: pointer;"></i>
+        <a href="https://ariarizkyproject1.netlify.app"><i class="fa-solid fa-eye"></i></a>
+      </div>
+     </div>
+     <div class="project-card">
+      <img alt="Screenshot of Sahabat Muslim app" height="200" src="ss project 2.png" width="300"/>
+      <h3>
+       Project 2
+      </h3>
+      <p>
+       Sebuah situs web dapat mengajarkan anda membuat situd web pribadi
+      </p>
+      <div class="icons">
+        <i class="fas fa-link" onclick="copyToClipboard('https://ariarizky-progate-course.netlify.app')" style="cursor: pointer;"></i>
+       </i>
+       <a href="https://ariarizky-progate-course.netlify.app"><i class="fa-solid fa-eye"></i></a>
+      </div>
+     </div>
+     <div class="project-card">
+      <img alt="Screenshot of SISTEKDES website" height="200" src="ss project 3.png" width="300"/>
+      <h3>
+       Project 3
+      </h3>
+      <p>
+       Situs ini dapat mengajarkan seseorang untuk belajar menjadi YouTuber
+      </p>
+      <div class="icons">
+        <i class="fas fa-link" onclick="copyToClipboard('https://kopiinaja.netlify.app')" style="cursor: pointer;"></i>
+       </i>
+        <a href="https://kopiinaja.netlify.app"><i class="fa-solid fa-eye"></i></a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <script>
+    function copyToClipboard(link) {
+        const textarea = document.createElement('textarea');
+        textarea.value = link;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        alert('Link telah disalin: ' + link);
+    }
+</script>
+  <script>
+    const toggleBtn = document.querySelector('.toggle_btn');
+    const toggleBtnIcon = document.querySelector('.toggle_btn i');
+    const dropDownMenu = document.querySelector('.dropdown_menu');
+
+    toggleBtn.onclick = function () {
+      dropDownMenu.classList.toggle('open');
+      const isOpen = dropDownMenu.classList.contains('open');
+
+      toggleBtnIcon.className = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars';
+    }
+  </script>
+</body>
+</html>

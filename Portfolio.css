@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  background-attachment: fixed; /* Mengatur latar belakang tetap */
+  background: linear-gradient(135deg, #0a84ff, #ff4500, #fff);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #ff4500;
+}
+
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+header {
+  margin-bottom: 40px;
+  position: relative;
+  padding: 0 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Bayangan yang lebih halus */
+}
+
+.header h1 {
+  color: #fff;
+  font-size: 2.5em;
+  font-weight: 700;
+  left: 20%;
+  margin-bottom: 10px;
+}
+.header p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.project-card {
+  background-color: rgba(255, 255, 255, 0.5); /* Transparansi 50% */
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Animasi transisi */
+}
+
+/* Efek saat hover */
+.project-card:hover {
+  transform: scale(1.05); /* Mengembang 5% */
+  background-color: rgba(255, 255, 255, 0.7); /* Mengubah transparansi saat hover */
+}
+.project-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+.project-card h3 {
+  color: #ff4500;
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 20px 0 10px;
+}
+.project-card p {
+  font-size: 1em;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.project-card .tech-stack {
+  font-size: 1em;
+  color: #d4af37;
+  font-weight: 700;
+}
+.project-card .icons {
+  margin-top: 20px;
+}
+.project-card .icons i {
+  color: #0a84ff;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.project-card .icons i:hover {
+  color: #ff4500;
+}
+@media (max-width: 768px) {
+  .header h1 {
+      font-size: 2em;
+  }
+  .header p {
+      font-size: 1em;
+  }
+  .project-card {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .links {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar .toggle_btn {
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none; /* Sembunyikan tombol toggle secara default */
+}
+
+.navbar .links a {
+  color: #fff; /* Warna teks link (kuning) */
+    padding: 0.5rem 1rem; /* Padding untuk membuat area klik lebih besar */
+    border-radius: 5px; /* Sudut membulat */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .links a:hover {
+  color: #ff4500; /* Warna teks saat hover */
+}
+
+.action_btn {
+  background-color: orange; /* Ubah warna tombol aksi */
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease; /* Tambahkan transisi untuk warna */
+}
+
+.action_btn:hover {
+  transform: scale(1.05);
+}
+
+.action_btn:active {
+  transform: scale(0.95);
+}
+
+.dropdown_menu {
+  color: #fff;
+  display: none; /* Tersembunyi secara default */
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+  display: block; /* Ditampilkan saat kelas 'open' ditambahkan */
+}
+
+.dropdown_menu ul {
+  padding: 0;
+}
+
+.dropdown_menu li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  font-size: 100px; /* Ukuran huruf */
+}
+
+.left {
+  background: linear-gradient(to bottom, #ff4500, #ff8c00); /* Gradien dari merah cerah ke oranye */
+  -webkit-background-clip: text; /* Untuk efek warna pada teks */
+  -webkit-text-fill-color: transparent; /* Menghilangkan warna teks asli */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Bayangan teks */
+  animation: pulse 1.5s infinite; /* Animasi berdenyut */
+}
+
+.middle {
+  background: linear-gradient(to bottom, #ffffff, #ffffff); /* Warna emas untuk huruf M */
+  -webkit-background-clip: text; /* Untuk efek warna pada teks */
+  -webkit-text-fill-color: transparent; 
+  text-shadow: 2px 2px 4px rgba(104, 104, 104, 0.5); /* Bayangan teks */
+  animation: pulse 1.5s infinite; /* Animasi berdenyut */
+}
+
+.right {
+  background: linear-gradient(to bottom, #0a84ff, #1cf0ff); /* Warna biru untuk huruf R */
+  -webkit-background-clip: text; /* Untuk efek warna pada teks */
+  -webkit-text-fill-color: transparent; /* Menghilangkan warna teks asli */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Bayangan teks */
+  animation: pulse 1.5s infinite; /* Animasi berdenyut */
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.1);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar .links,
+  .navbar .action_btn {
+    display: none; /* Sembunyikan tautan dan tombol aksi di layar kecil */
+  }
+
+  .navbar .toggle_btn {
+    display: block; /* Tampilkan tombol toggle */
+  }
+
+  .dropdown_menu {
+    display: none; /* Pastikan dropdown tidak terbuka otomatis */
+  }
+}
+
+@media (max-width: 576px) {
+  .dropdown_menu {
+    left: 2rem;
+    width: unset; /* Menyesuaikan lebar dropdown menu */
+  }
+}

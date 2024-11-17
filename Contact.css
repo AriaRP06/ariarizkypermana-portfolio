@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #0a84ff, #ff4500, #fff);
+  background-size: cover;
+  background-position: center;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #ff4500;
+}
+
+header {
+  position: relative;
+  padding: 0 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Bayangan yang lebih halus */
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: auto;
+}
+
+.navbar .links {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.navbar .links li {
+  margin: 0 1rem; /* Jarak antar tautan */
+}
+
+.navbar .toggle_btn {
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none; /* Sembunyikan tombol toggle secara default */
+}
+
+.navbar .links a {
+  color: #fff; /* Warna teks link */
+  padding: 0.5rem 1rem; /* Padding untuk membuat area klik lebih besar */
+  border-radius: 5px; /* Sudut membulat */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .links a:hover {
+  color: #ff4500; /* Warna teks saat hover */
+}
+
+.dropdown_menu {
+  color: #fff;
+  display: none; /* Tersembunyi secara default */
+  position: absolute;
+  right: 2rem; /* Posisi dropdown menu */
+  top: 60px; /* Jarak dari navbar */
+  width: 200px; /* Lebar dropdown menu */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px); /* Efek blur */
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+  display: block; /* Ditampilkan saat kelas 'open' ditambahkan */
+}
+
+.dropdown_menu ul {
+  padding: 0;
+}
+
+.dropdown_menu li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  width: 90%;
+  max-width: 600px;
+}
+
+.input-group {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  outline: 0;
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+  font-size: 15px;
+}
+
+label {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 10px;
+  color: #fff;
+  cursor: text;
+  transition: 0.2s;
+}
+
+button {
+  padding: 10px 0;
+  color: #fff;
+  outline: none;
+  background: transparent;
+  border: 1px solid #fff;
+  width: 100%;
+  cursor: pointer;
+}
+
+input:focus ~ label,
+input:valid ~ label,
+textarea:focus ~ label,
+textarea:valid ~ label {
+  top: -35px;
+  font-size: 14px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.row .input-group {
+  flex-basis: 48%; /* Mengatur lebar input group dalam baris */
+}
+
+.text {
+  font-size: 100px; /* Ukuran huruf */
+}
+
+.left {
+  background: linear-gradient(to bottom, #ff4500, #ff8c00); /* Gradien dari merah cerah ke oranye */
+  -webkit-background-clip: text; /* Untuk efek warna pada teks */
+  -webkit-text-fill-color: transparent; /* Menghilangkan warna teks asli */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Bayangan teks */
+  animation: pulse 1.5s infinite; /* Animasi berdenyut */
+}
+
+.middle {
+  background: linear-gradient(to bottom, #ffffff, #ffffff); /* Warna putih untuk huruf M */
+  -webkit-background-clip: text; /* Untuk efek warna pada teks */
+  -webkit-text-fill-color: transparent; 
+  text-shadow: 2px 2px 4px rgba(104, 104, 104, 0.5); /* Bayangan teks */
+  animation: pulse 1.5s infinite; /* Animasi berdenyut */
+}
+
+.right {
+  background: linear-gradient(to bottom, #0a84ff, #1cf0ff); /* Warna biru untuk huruf R */
+  -webkit-background-clip: text; /* Untuk efek warna pada teks */
+  -webkit-text-fill-color: transparent; /* Menghilangkan warna teks asli */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Bayangan teks */
+  animation: pulse 1.5s infinite; /* Animasi berdenyut */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar .links,
+  .navbar .action_btn {
+    display: none; /* Sembunyikan tautan dan tombol aksi di layar kecil */
+  }
+
+  .navbar .toggle_btn {
+    display: block; /* Tampilkan tombol toggle */
+  }
+
+  .dropdown_menu {
+    display: none; /* Pastikan dropdown tidak terbuka otomatis */
+  }
+}
+
+@media (max-width: 576px) {
+  .dropdown_menu {
+    left: 2rem; /* Pindahkan dropdown ke kiri untuk layar kecil */
+    width: unset; /* Menyesuaikan lebar dropdown menu */
+  }
+}
